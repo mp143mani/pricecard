@@ -1,25 +1,83 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import Card from "./component/Card";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+  let data = [
+    {
+      plan:"FREE",
+      price:"0",
+      user:"Single User",
+      userEnabler:true,
+      storage:"7GB Storage",
+      storageEnabler:true,
+      publicProjects:"Unlimited Public Projects",
+      publicProjectsEnabler:true,
+      communityAccess:"Community Access",
+      communityAccessEnabler:true,
+      privateProjects:"Unlimited Private Projects",
+      privateProjectsEnabler:false,
+      phoneSupport:"Dedicated Phone Support",
+      phoneSupportEnabler:false,
+      subDomain:"Free Subdomain",
+      subDomainEnabler:false,
+      statusReport:"Monthly Status Report",
+      statusReportEnabler:false
+    },
+    {
+      plan:"PLUS",
+      price:"99",
+      user:"15 Users",
+      userEnabler:true,
+      storage:"60GB Storage",
+      storageEnabler:true,
+      publicProjects:"Unlimited Public Projects",
+      publicProjectsEnabler:true,
+      communityAccess:"Community Access",
+      communityAccessEnabler:true,
+      privateProjects:"Unlimited Private Projects",
+      privateProjectsEnabler:true,
+      phoneSupport:"Dedicated Phone Support",
+      phoneSupportEnabler:true,
+      subDomain:"Free Subdomain",
+      subDomainEnabler:true,
+      statusReport:"Monthly Status Report",
+      statusReportEnabler:false
+    },
+    {
+      plan:"PRO",
+      price:"499",
+      user:"Unlimited Users",
+      userEnabler:true,
+      storage:"200GB Storage",
+      storageEnabler:true,
+      publicProjects:"Unlimited Public Projects",
+      publicProjectsEnabler:true,
+      communityAccess:"Community Access",
+      communityAccessEnabler:true,
+      privateProjects:"Unlimited Private Projects",
+      privateProjectsEnabler:true,
+      phoneSupport:"Dedicated Phone Support",
+      phoneSupportEnabler:true,
+      subDomain:"Free Subdomains",
+      subDomainEnabler:true,
+      statusReport:"Monthly Status Report",
+      statusReportEnabler:true
+    }
+  ]
+
+  return <>
+    <section className="pricing py-5">
+  <div className="container">
+    <div className="row">
+      {
+        data.map((e,i)=>{
+          return <Card details={e} key={i}/>
+        })
+      }
     </div>
-  );
+  </div>
+</section>
+  </>
 }
 
 export default App;
